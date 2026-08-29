@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎀 Lula's Data Analyst Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blush:#FFE9F2;
+  --pink-soft:#FBD3E4;
+  --pink-main:#F5A9C7;
+  --pink-deep:#E8618C;
+  --pink-darker:#C43E6B;
+  --gold:#C79A4B;
+  --gold-light:#E4C689;
+  --burgundy:#7A2E3F;
+  --cream:#FBF3EA;
+  --plum:#5C3547;
+  --plum-soft:#8A5A70;
+  --white:#FFFDF8;
+  --shadow: 0 8px 24px rgba(122,46,63,0.14);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Quicksand',sans-serif;
+  background:
+    linear-gradient(180deg, rgba(139,148,168,0.16) 0%, rgba(139,148,168,0.05) 220px, transparent 420px),
+    radial-gradient(circle at 10% 8%, #FFEFF6 0, transparent 45%),
+    radial-gradient(circle at 90% 5%, #FDE4EE 0, transparent 40%),
+    var(--cream);
+  color:var(--plum);
+  min-height:100vh;
+  background-attachment:fixed;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    radial-gradient(circle, rgba(232,97,140,0.07) 1.5px, transparent 1.5px),
+    repeating-linear-gradient(45deg, rgba(199,154,75,0.05) 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(-45deg, rgba(199,154,75,0.05) 0 2px, transparent 2px 40px);
+  background-size: 26px 26px, 80px 80px, 80px 80px;
+  pointer-events:none;
+  z-index:0;
+}
+body::after{
+  content:"";
+  position:fixed;
+  left:0; right:0; bottom:0;
+  height:190px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 240' preserveAspectRatio='none'%3E%3Cg fill='%23705A72'%3E%3Cpath d='M0 240V150C40 140 60 150 90 145C110 142 120 130 130 130C140 130 145 140 155 140V240Z'/%3E%3Crect x='160' y='95' width='26' height='145'/%3E%3Cpolygon points='160,95 173,70 186,95'/%3E%3Crect x='195' y='115' width='18' height='125'/%3E%3Cpolygon points='195,115 204,95 213,115'/%3E%3Cpath d='M220 240V120C240 118 255 122 260 100C264 84 276 84 280 100C285 122 300 118 320 120V240Z'/%3E%3Crect x='300' y='60' width='14' height='180'/%3E%3Cpolygon points='300,60 307,30 314,60'/%3E%3Ccircle cx='307' cy='45' r='3'/%3E%3Crect x='330' y='150' width='400' height='90'/%3E%3Crect x='345' y='105' width='22' height='45'/%3E%3Cpolygon points='345,105 356,85 367,105'/%3E%3Crect x='400' y='95' width='24' height='55'/%3E%3Cpolygon points='400,95 412,72 424,95'/%3E%3Crect x='450' y='115' width='20' height='35'/%3E%3Cpolygon points='450,115 460,98 470,115'/%3E%3Crect x='500' y='90' width='26' height='60'/%3E%3Cpolygon points='500,90 513,60 526,90'/%3E%3Crect x='560' y='120' width='18' height='30'/%3E%3Cpolygon points='560,120 569,102 578,120'/%3E%3Crect x='610' y='100' width='22' height='50'/%3E%3Cpolygon points='610,100 621,78 632,100'/%3E%3Crect x='660' y='130' width='16' height='20'/%3E%3Cpolygon points='660,130 668,115 676,130'/%3E%3Crect x='700' y='108' width='20' height='42'/%3E%3Cpolygon points='700,108 710,88 720,108'/%3E%3Cpath d='M760 240V135C790 130 810 138 825 118C838 100 852 100 860 118C875 138 895 130 920 135V240Z'/%3E%3Crect x='830' y='75' width='16' height='150'/%3E%3Cpolygon points='830,75 838,50 846,75'/%3E%3Crect x='940' y='140' width='260' height='100'/%3E%3Crect x='955' y='100' width='20' height='40'/%3E%3Cpolygon points='955,100 965,82 975,100'/%3E%3Crect x='1000' y='85' width='24' height='55'/%3E%3Cpolygon points='1000,85 1012,62 1024,85'/%3E%3Crect x='1050' y='110' width='18' height='30'/%3E%3Cpolygon points='1050,110 1059,94 1068,110'/%3E%3Crect x='1090' y='95' width='22' height='45'/%3E%3Cpolygon points='1090,95 1101,74 1112,95'/%3E%3Crect x='1140' y='120' width='16' height='20'/%3E%3Cpolygon points='1140,120 1148,106 1156,120'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat:repeat-x;
+  background-position:bottom;
+  background-size:1200px 190px;
+  opacity:.10;
+  pointer-events:none;
+  z-index:0;
+}
+h1,h2,h3{font-family:'Playfair Display',serif; margin:0 0 8px;}
+.flourish{
+  text-align:center; color:var(--gold); font-size:1rem; letter-spacing:.3em;
+  margin:10px 0 4px; font-family:'Cormorant Garamond', serif;
+}
+.wrap{position:relative; z-index:1; max-width:980px; margin:0 auto; padding:20px 18px 80px;}
+
+/* ---------- HEADER / RIBBON NAV ---------- */
+header.hero{
+  text-align:center;
+  padding:30px 20px 26px;
+  border:1px solid var(--gold-light);
+  border-radius:4px;
+  position:relative;
+  margin-top:10px;
+}
+header.hero::before{
+  content:"";
+  position:absolute; inset:6px;
+  border:1px solid var(--gold-light);
+  border-radius:2px;
+  pointer-events:none;
+}
+.bow{font-size:34px; display:block; margin-bottom:6px;}
+header.hero h1{font-size:2.4rem; font-style:italic; color:var(--pink-darker); letter-spacing:.5px;}
+header.hero p.tag{color:var(--plum-soft); font-size:1.05rem; margin-top:6px; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.2rem;}
+.countdown-row{
+  display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:20px;
+}
+.count-chip{
+  background:var(--white);
+  border:1px solid var(--gold-light);
+  border-radius:6px;
+  padding:10px 18px;
+  box-shadow:var(--shadow);
+  min-width:100px;
+  text-align:center;
+  position:relative;
+}
+.count-chip::after{
+  content:"";
+  position:absolute; inset:3px;
+  border:1px solid var(--pink-soft);
+  border-radius:3px;
+  pointer-events:none;
+}
+.count-chip .num{font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--pink-deep); font-weight:700;}
+.count-chip .lbl{font-size:.72rem; color:var(--gold); text-transform:uppercase; letter-spacing:.12em; font-family:'Cormorant Garamond',serif; font-weight:600;}
+
+nav.tabs{
+  display:flex;
+  justify-content:center;
+  gap:0;
+  margin:30px auto 0;
+  flex-wrap:wrap;
+  position:relative;
+}
+nav.tabs button{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;
+  font-size:1.05rem;
+  letter-spacing:.03em;
+  background:var(--pink-soft);
+  color:var(--pink-darker);
+  border:1px solid transparent;
+  padding:12px 22px;
+  cursor:pointer;
+  position:relative;
+  margin:0 4px 8px;
+  border-radius:6px 6px 2px 2px;
+  transition:.2s;
+  box-shadow:0 3px 0 rgba(122,46,63,0.18);
+}
+nav.tabs button::after{
+  content:"";
+  position:absolute;
+  bottom:-8px; left:50%;
+  transform:translateX(-50%);
+  border-left:9px solid transparent;
+  border-right:9px solid transparent;
+  border-top:8px solid var(--pink-soft);
+  transition:.2s;
+}
+nav.tabs button.active{
+  background:var(--pink-deep);
+  color:#fff;
+  transform:translateY(-2px);
+}
+nav.tabs button.active::after{ border-top-color:var(--pink-deep); }
+nav.tabs button:hover{ background:var(--pink-main); color:#fff; }
+
+section.panel{ display:none; animation:fadeIn .35s ease; }
+section.panel.active{ display:block; }
+@keyframes fadeIn{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+
+/* ---------- CARDS ---------- */
+.card{
+  background:var(--white);
+  border:1px solid var(--pink-soft);
+  border-radius:8px;
+  padding:24px 26px;
+  margin-bottom:20px;
+  box-shadow:var(--shadow);
+  position:relative;
+}
+.card::before{
+  content:"";
+  position:absolute; inset:5px;
+  border:1px solid var(--gold-light);
+  border-radius:4px;
+  pointer-events:none;
+  opacity:.6;
+}
+.card h2{ color:var(--pink-darker); font-size:1.35rem; letter-spacing:.02em; }
+.card h2 .em{ margin-right:8px; }
+.badge{
+  display:inline-block;
+  font-size:.72rem;
+  font-weight:700;
+  padding:3px 12px;
+  border-radius:20px;
+  letter-spacing:.03em;
+  margin-left:8px;
+  vertical-align:middle;
+}
+.badge.wajib{ background:#FBD9E4; color:var(--pink-darker); }
+.badge.opsional{ background:#F3E7D0; color:#8A6A2A; }
+
+/* ---------- SETUP SOFTWARE ---------- */
+.soft-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+.soft-card{
+  background:var(--blush);
+  border-radius:16px;
+  padding:16px 18px;
+  border:1px dashed var(--pink-main);
+}
+.soft-card h3{ font-size:1.05rem; color:var(--pink-darker); margin-bottom:4px;}
+.soft-card p{ margin:6px 0; font-size:.92rem; line-height:1.5; }
+.soft-card ol{ margin:8px 0 4px 18px; padding:0; font-size:.88rem; line-height:1.6; }
+.soft-card a{ color:var(--pink-deep); font-weight:700; text-decoration:none; border-bottom:1.5px dotted var(--pink-deep); }
+.soft-card a:hover{ color:var(--pink-darker); }
+
+/* ---------- ROADMAP PHASES ---------- */
+.phase{
+  border:1px solid var(--gold-light);
+  border-radius:8px;
+  margin-bottom:16px;
+  overflow:hidden;
+  background:var(--white);
+}
+.phase-head{
+  padding:16px 20px;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:linear-gradient(90deg, var(--blush), #FFFDFB);
+}
+.phase-head h3{ font-size:1.1rem; color:var(--plum); }
+.phase-head .range{ font-size:.8rem; color:var(--plum-soft); font-weight:500; }
+.phase-head .chev{ font-size:1.1rem; color:var(--pink-deep); transition:.25s; }
+.phase.open .chev{ transform:rotate(180deg); }
+.phase-body{ display:none; padding:6px 22px 20px; }
+.phase.open .phase-body{ display:block; }
+.topic-list{ list-style:none; padding:0; margin:10px 0 18px; }
+.topic-list li{
+  padding:8px 0 8px 22px;
+  position:relative;
+  font-size:.93rem;
+  border-bottom:1px dashed #F3D8E4;
+}
+.topic-list li:last-child{ border-bottom:none; }
+.topic-list li::before{
+  content:"♡";
+  position:absolute; left:0; top:8px;
+  color:var(--pink-main);
+}
+.sub-h{ color:var(--pink-darker); font-weight:700; margin:14px 0 6px; font-size:.95rem; }
+.soal-box{
+  background:var(--blush);
+  border-left:3px solid var(--pink-deep);
+  border-radius:0 12px 12px 0;
+  padding:10px 16px;
+  margin-bottom:10px;
+  font-size:.9rem;
+  line-height:1.55;
+}
+.soal-box b{ color:var(--pink-darker); }
+.jawab{ color:var(--plum-soft); font-style:italic; margin-top:4px; display:block; }
+.latihan-list{ margin:0; padding-left:20px; font-size:.9rem; line-height:1.7; }
+.resource-line{ font-size:.85rem; margin-top:10px; color:var(--plum-soft); }
+.resource-line a{ color:var(--pink-deep); font-weight:600; text-decoration:none; }
+
+/* ---------- TRACKER ---------- */
+.progress-wrap{ margin-bottom:22px; }
+.progress-bar-outer{
+  background:#FBE3EC;
+  border-radius:20px;
+  height:26px;
+  overflow:hidden;
+  border:1px solid var(--pink-main);
+  position:relative;
+}
+.progress-bar-inner{
+  height:100%;
+  background:linear-gradient(90deg, var(--pink-main), var(--pink-deep));
+  border-radius:20px 0 0 20px;
+  transition:width .4s ease;
+  display:flex; align-items:center; justify-content:flex-end;
+}
+.progress-bar-inner span{
+  font-size:.75rem; color:#fff; font-weight:700; padding-right:10px; white-space:nowrap;
+}
+.progress-label{ text-align:center; margin-top:8px; font-size:.9rem; color:var(--plum-soft); }
+table.tracker{ width:100%; border-collapse:collapse; font-size:.88rem; }
+table.tracker th{
+  background:var(--pink-deep); color:#fff; padding:9px 8px; text-align:left; font-weight:600;
+}
+table.tracker th:first-child{ border-radius:10px 0 0 0; }
+table.tracker th:last-child{ border-radius:0 10px 0 0; }
+table.tracker td{ padding:8px 8px; border-bottom:1px solid #F6DCE7; vertical-align:top; }
+table.tracker tr:nth-child(even) td{ background:#FFF6FA; }
+table.tracker tr.done td{ background:#FCE9F1 !important; }
+table.tracker tr.done td.topic-cell{ text-decoration:line-through; color:var(--plum-soft); }
+.checkbox-heart{
+  width:22px; height:22px; cursor:pointer; appearance:none;
+  border:2px solid var(--pink-main); border-radius:6px; position:relative;
+  background:#fff; flex-shrink:0;
+}
+.checkbox-heart:checked{ background:var(--pink-deep); border-color:var(--pink-deep); }
+.checkbox-heart:checked::after{
+  content:"✓"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:14px; font-weight:700;
+}
+.phase-tagcell{ font-size:.72rem; font-weight:700; padding:3px 10px; border-radius:12px; display:inline-block; }
+.reset-btn{
+  background:var(--white); border:1.5px solid var(--pink-main); color:var(--pink-darker);
+  font-family:'Quicksand',sans-serif; font-weight:700; padding:8px 16px; border-radius:14px;
+  cursor:pointer; font-size:.85rem; margin-top:14px;
+}
+.reset-btn:hover{ background:var(--pink-soft); }
+.loading-msg{ text-align:center; color:var(--plum-soft); padding:30px; font-style:italic; }
+
+footer{ text-align:center; margin-top:40px; color:var(--plum-soft); font-size:.85rem; padding-bottom:20px; }
+footer .bow{ font-size:20px; }
+
+@media(max-width:600px){
+  header.hero h1{ font-size:1.7rem; }
+  nav.tabs button{ padding:10px 14px; font-size:.85rem; }
+  .card{ padding:16px 16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="bow">🎀</span>
+    <h1>Lula's Data Analyst Journey</h1>
+    <p class="tag">Dari Teknik Fisika menuju Data Analyst — pelan-pelan tapi konsisten, sayang~</p>
+    <div class="flourish">✦ ❦ ✦</div>
+    <div class="countdown-row">
+      <div class="count-chip"><div class="num">27 Agu</div><div class="lbl">Mulai</div></div>
+      <div class="count-chip"><div class="num">27 Sep</div><div class="lbl">Target</div></div>
+      <div class="count-chip"><div class="num">32</div><div class="lbl">Hari</div></div>
+      <div class="count-chip"><div class="num" id="mini-percent">0%</div><div class="lbl">Progress</div></div>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="beranda">🏠 Beranda</button>
+    <button class="tab-btn" data-tab="setup">🧸 Setup Software</button>
+    <button class="tab-btn" data-tab="roadmap">📖 Roadmap & Latihan</button>
+    <button class="tab-btn" data-tab="tracker">✅ Progress Tracker</button>
+  </nav>
+
+  <!-- ===================== BERANDA ===================== -->
+  <section class="panel active" id="panel-beranda">
+    <div class="card">
+      <h2><span class="em">💌</span>Halo Lula!</h2>
+      <p>Aku senang banget kamu mau mulai perjalanan jadi Data Analyst! Background Teknik Fisika kamu itu modal yang bagus banget — kamu udah terbiasa mikir logis, kerja dengan angka, dan analisis data eksperimen. Skill itu inti banget dari data analyst, cuma tools-nya aja yang beda.</p>
+      <p>Website ini dibagi 4 bagian:</p>
+      <ul>
+        <li><b>Setup Software</b> — aplikasi apa aja yang perlu diunduh di MacBook M2 kamu, lengkap sama cara install-nya.</li>
+        <li><b>Roadmap & Latihan</b> — materi per fase, ditandai <span class="badge wajib">WAJIB</span> atau <span class="badge opsional">OPSIONAL</span>, lengkap contoh soal & latihan.</li>
+        <li><b>Progress Tracker</b> — checklist 32 hari (27 Agustus – 27 September) buat kamu centang tiap materi yang udah dipelajari, otomatis dihitung persentasenya.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2><span class="em">🗺️</span>Peta Besar Perjalanan</h2>
+      <ul class="topic-list">
+        <li><b>Fase 1 (Hari 1–5, 27–31 Agu):</b> Fondasi — Excel/Google Sheets & Statistika Dasar <span class="badge wajib">WAJIB</span></li>
+        <li><b>Fase 2 (Hari 6–13, 1–8 Sep):</b> SQL dari dasar sampai JOIN <span class="badge wajib">WAJIB</span></li>
+        <li><b>Fase 3 (Hari 14–22, 9–17 Sep):</b> Python + Pandas + NumPy <span class="badge wajib">WAJIB</span></li>
+        <li><b>Fase 4 (Hari 23–27, 18–22 Sep):</b> Visualisasi Data & Statistik Inferensial <span class="badge wajib">WAJIB</span> (Tableau <span class="badge opsional">OPSIONAL</span>)</li>
+        <li><b>Fase 5 (Hari 28–32, 23–27 Sep):</b> Portfolio Project end-to-end <span class="badge wajib">WAJIB</span></li>
+      </ul>
+      <p style="font-size:.88rem; color:var(--plum-soft);">Target 27 September: kamu udah pegang semua materi wajib (walau belum expert) + punya 1 project portfolio yang bisa dipamerin ke recruiter. Setelah itu baru lanjut ke materi opsional/lanjutan kayak Machine Learning dasar, Excel VBA, atau SQL window function tingkat lanjut.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="em">📌</span>Tips Belajar Biar Nggak Burnout</h2>
+      <ul>
+        <li>Sisihkan 1.5–2.5 jam per hari, konsisten lebih penting daripada lama.</li>
+        <li>Selalu praktik langsung habis baca teori — jangan cuma nonton tutorial.</li>
+        <li>Kalau ada hari yang kelewat, jangan panik, geser aja jadwalnya — yang penting total materi wajib tetap tercapai.</li>
+        <li>Setiap akhir fase, coba jelaskan ulang konsepnya pakai bahasa sendiri (teknik Feynman) sebelum lanjut ke fase berikutnya.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== SETUP SOFTWARE ===================== -->
+  <section class="panel" id="panel-setup">
+    <div class="card">
+      <h2><span class="em">🧸</span>Software untuk MacBook M2 (Apple Silicon)</h2>
+      <p style="font-size:.9rem; color:var(--plum-soft);">Semua tools di bawah gratis dan kompatibel dengan chip M2. Nggak perlu diinstall semua di hari pertama — ikuti aja urutan sesuai fase belajarnya.</p>
+      <div class="soft-grid">
+
+        <div class="soft-card">
+          <h3>1. Akun Google (Colab & Sheets) <span class="badge wajib">WAJIB</span></h3>
+          <p>Nggak perlu install apa-apa! Google Colab dipakai buat latihan Python + Pandas langsung dari browser, gratis dan sudah ada semua library-nya.</p>
+          <ol>
+            <li>Buka <a href="https://colab.research.google.com" target="_blank">colab.research.google.com</a> pakai Safari/Chrome.</li>
+            <li>Login pakai akun Google kamu.</li>
+            <li>Klik "New Notebook" untuk mulai coding.</li>
+          </ol>
+        </div>
+
+        <div class="soft-card">
+          <h3>2. Visual Studio Code <span class="badge wajib">WAJIB</span></h3>
+          <p>Text editor untuk nulis dan rapiin kode Python/SQL kamu di lokal, dipakai mulai Fase 3.</p>
+          <ol>
+            <li>Buka <a href="https://code.visualstudio.com/download" target="_blank">code.visualstudio.com/download</a>.</li>
+            <li>Pilih tombol "Apple Silicon" (khusus chip M1/M2/M3).</li>
+            <li>Buka file .zip yang terunduh, drag ikon VS Code ke folder Applications.</li>
+            <li>Buka VS Code dari Launchpad, install extension "Python" dan "Jupyter" dari tab Extensions (ikon 4 kotak di sidebar kiri).</li>
+          </ol>
+        </div>
+
+        <div class="soft-card">
+          <h3>3. DB Browser for SQLite <span class="badge wajib">WAJIB</span></h3>
+          <p>Aplikasi ringan untuk praktik SQL secara lokal tanpa perlu setup server database.</p>
+          <ol>
+            <li>Buka <a href="https://sqlitebrowser.org/dl/" target="_blank">sqlitebrowser.org/dl</a>.</li>
+            <li>Di bagian macOS, pilih file .dmg "Apple Silicon".</li>
+            <li>Buka file .dmg, drag ikon aplikasi ke folder Applications.</li>
+            <li>Buka aplikasinya — kalau muncul peringatan keamanan, buka System Settings → Privacy & Security → klik "Open Anyway".</li>
+          </ol>
+        </div>
+
+        <div class="soft-card">
+          <h3>4. Miniconda (Python lokal) <span class="badge opsional">OPSIONAL</span></h3>
+          <p>Kalau nanti mau coding Python di laptop tanpa internet (nggak wajib karena Colab udah cukup untuk 32 hari pertama).</p>
+          <ol>
+            <li>Buka <a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank">docs.conda.io/en/latest/miniconda.html</a>.</li>
+            <li>Unduh installer "Miniconda3 macOS Apple M1 64-bit pkg".</li>
+            <li>Buka file .pkg, ikuti wizard instalasinya sampai selesai.</li>
+            <li>Cek berhasil dengan buka Terminal, ketik <code>conda --version</code>.</li>
+          </ol>
+        </div>
+
+        <div class="soft-card">
+          <h3>5. Tableau Public <span class="badge wajib">WAJIB</span></h3>
+          <p>Untuk bikin dashboard visualisasi data yang interaktif, dipakai di Fase 4.</p>
+          <ol>
+            <li>Buka <a href="https://public.tableau.com/en-us/s/download" target="_blank">public.tableau.com/s/download</a>.</li>
+            <li>Isi email, klik "Download the App".</li>
+            <li>Buka file .dmg yang terunduh, drag ke folder Applications.</li>
+            <li>Buka aplikasi, login/daftar akun Tableau Public (gratis).</li>
+          </ol>
+        </div>
+
+        <div class="soft-card">
+          <h3>6. Looker Studio (alternatif Tableau) <span class="badge opsional">OPSIONAL</span></h3>
+          <p>Kalau mau versi berbasis web tanpa install, bisa pakai ini — cocok juga untuk bikin dashboard dari Google Sheets.</p>
+          <ol>
+            <li>Buka <a href="https://lookerstudio.google.com" target="_blank">lookerstudio.google.com</a>, login dengan akun Google.</li>
+            <li>Klik "Blank Report" untuk mulai.</li>
+          </ol>
+        </div>
+
+        <div class="soft-card">
+          <h3>7. GitHub Desktop <span class="badge opsional">OPSIONAL</span></h3>
+          <p>Untuk simpan dan pamerkan project portfolio kamu secara online — sangat membantu waktu melamar kerja nanti.</p>
+          <ol>
+            <li>Buat akun dulu di <a href="https://github.com" target="_blank">github.com</a>.</li>
+            <li>Unduh aplikasi di <a href="https://desktop.github.com" target="_blank">desktop.github.com</a>.</li>
+            <li>Buka file .zip, pindahkan ke folder Applications, lalu login pakai akun GitHub kamu.</li>
+          </ol>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ROADMAP & LATIHAN ===================== -->
+  <section class="panel" id="panel-roadmap">
+
+    <div class="card">
+      <h2><span class="em">📚</span>E-book DQLab — mana yang harus dibaca?</h2>
+      <p style="font-size:.9rem; color:var(--plum-soft);">Dari 19 e-book yang tersedia di kelas gratis DQLab kamu, ini urutan baca yang aku sesuaikan sama roadmap di atas. Yang <span class="badge wajib">WAJIB</span> itu inti banget buat kejar target 27 September; yang <span class="badge opsional">OPSIONAL</span> boleh nyusul kalau ada waktu lebih.</p>
+
+      <div class="sub-h">Baca duluan saat Fase 1 — Excel</div>
+      <ol class="latihan-list">
+        <li>Excel untuk mengolah data dg rumus dasar <span class="badge wajib">WAJIB</span></li>
+        <li>Excel untuk rumus logika dan lookup <span class="badge wajib">WAJIB</span></li>
+        <li>Excel untuk Analisis data <span class="badge wajib">WAJIB</span></li>
+        <li>Excel untuk mengolah dan menganalisis data <span class="badge wajib">WAJIB</span></li>
+        <li>Excel untuk membuat grafik & visualisasi data <span class="badge wajib">WAJIB</span></li>
+        <li>Excel untuk pekerjaan nyata <span class="badge opsional">OPSIONAL</span></li>
+        <li>Excel untuk menguasai rumus teks & tanggal <span class="badge opsional">OPSIONAL</span></li>
+      </ol>
+
+      <div class="sub-h">Baca saat Fase 2 — SQL</div>
+      <ol class="latihan-list">
+        <li>Dasar & Pembelajaran SQL untuk Pemula <span class="badge wajib">WAJIB</span></li>
+        <li>Memahami database Relasional & Fundamental SQL <span class="badge wajib">WAJIB</span></li>
+        <li>Panduan SQL untuk Data Analyst & Database <span class="badge wajib">WAJIB</span></li>
+        <li>Belajar Query & Analisis Data dengan SQL <span class="badge wajib">WAJIB</span></li>
+        <li>Studi Kasus & Praktik SQL untuk Data Analyst <span class="badge wajib">WAJIB</span></li>
+        <li>Fungsi SQL & Pengolahan data untuk Data Analyst <span class="badge opsional">OPSIONAL</span> — fungsi & window function lanjutan</li>
+        <li>Penerapan & Tantangan SQL dalam Pengolahan Data <span class="badge opsional">OPSIONAL</span></li>
+      </ol>
+
+      <div class="sub-h">Baca saat Fase 3 — Python</div>
+      <ol class="latihan-list">
+        <li>Python untuk IDE / Anaconda distribution <span class="badge opsional">OPSIONAL</span> — cukup dibaca sekilas buat referensi install Python lokal nanti; untuk 32 hari ini kita pakai Google Colab jadi nggak wajib.</li>
+      </ol>
+      <p style="font-size:.85rem; color:var(--plum-soft);">⚠️ "Python untuk Windows 10" dan "Python Panduan Instalasi Python 3 pd Windows 10 (2)" <b>boleh dilewati</b> — dua e-book itu khusus instalasi di Windows, sedangkan kamu pakai MacBook M2. Panduan install Python versi Mac udah ada di tab Setup Software.</p>
+
+      <div class="sub-h">Materi lanjutan (setelah 27 September)</div>
+      <ol class="latihan-list">
+        <li>Kettle: Bangun data warehouse dg Open Source ETL (Kettle) <span class="badge opsional">OPSIONAL</span> — ini materi ETL/data engineering, di luar scope data analyst pemula.</li>
+        <li>Machine Learning untuk Model Kredit Sederhana <span class="badge opsional">OPSIONAL</span> — bagus buat lanjutan belajar setelah dasar-dasarnya kamu kuasai dulu.</li>
+      </ol>
+    </div>
+
+
+    <div class="card">
+      <h2><span class="em">🎓</span>Modul & Quiz Gratis DQLab</h2>
+      <p style="font-size:.9rem; color:var(--plum-soft);">DQLab juga punya modul interaktif berbasis AI plus quiz penilaian. Ini rekomendasi mana yang perlu kamu kerjakan dan kapan.</p>
+
+      <div class="sub-h">A) Modul R <span class="badge opsional">OPSIONAL</span></div>
+      <ol class="latihan-list">
+        <li>Guide to Learn R with AI at DQLab</li>
+        <li>Introduction to Data Science with R</li>
+      </ol>
+      <p style="font-size:.85rem; color:var(--plum-soft);">Roadmap kamu fokus ke Python, bukan R — jadi modul R ini boleh dilewati dulu. Kalau nanti penasaran, atau ada lowongan incaran yang minta R, bisa dicicil setelah 27 September.</p>
+
+      <div class="sub-h">B) Modul Python <span class="badge wajib">WAJIB</span></div>
+      <ol class="latihan-list">
+        <li>Introduction to Data Science with Python — kerjakan pas Fase 3 awal (Hari 14–18)</li>
+        <li>Guide to Learn Python with AI at DQLab — kerjakan pas Fase 3 akhir (Hari 19–22)</li>
+      </ol>
+
+      <div class="sub-h">C) Modul SQL <span class="badge wajib">WAJIB</span></div>
+      <ol class="latihan-list">
+        <li>Guide to Learn SQL with AI at DQLab — kerjakan pas Fase 2 (Hari 6–13), sejalan sama e-book SQL di atas</li>
+      </ol>
+
+      <div class="sub-h">Quiz <span class="badge wajib">WAJIB</span></div>
+      <p style="font-size:.9rem;">Kerjakan quiz di akhir tiap modul (Excel, SQL, Python) sebagai self-check. Kalau skor quiz masih di bawah 70%, ulang baca ringkasan materinya dulu sebelum lanjut ke fase berikutnya — jangan maksa lanjut kalau fondasinya belum kuat.</p>
+    </div>
+
+    <div class="phase open" data-phase="1">
+      <div class="phase-head" onclick="togglePhase(this)">
+        <div><h3>🎀 Fase 1 — Fondasi: Excel/Sheets & Statistika Dasar</h3><div class="range">Hari 1–5 · 27–31 Agustus</div></div>
+        <div class="chev">⌄</div>
+      </div>
+      <div class="phase-body">
+        <ul class="topic-list">
+          <li>Kenalan peran Data Analyst & tools yang dipakai sehari-hari <span class="badge wajib">WAJIB</span></li>
+          <li>Formula dasar Excel/Sheets: SUM, AVERAGE, COUNT, COUNTA, IF <span class="badge wajib">WAJIB</span></li>
+          <li>VLOOKUP / XLOOKUP & INDEX-MATCH <span class="badge wajib">WAJIB</span></li>
+          <li>Pivot Table & Conditional Formatting <span class="badge wajib">WAJIB</span></li>
+          <li>Statistika deskriptif: mean, median, modus, standar deviasi, distribusi data <span class="badge wajib">WAJIB</span></li>
+          <li>Shortcut & Data Validation di Excel/Sheets <span class="badge opsional">OPSIONAL</span></li>
+        </ul>
+        <div class="sub-h">✏️ Contoh Soal</div>
+        <div class="soal-box"><b>1.</b> Diberikan kolom A (nama produk) dan kolom B (jumlah terjual) untuk 10 baris data. Buat formula total dan rata-rata penjualan.
+        <span class="jawab">Jawaban: =SUM(B2:B11) untuk total, =AVERAGE(B2:B11) untuk rata-rata.</span></div>
+        <div class="soal-box"><b>2.</b> Kamu punya tabel harga di Sheet2 (kolom A = nama produk, kolom B = harga). Cari harga produk "Sabun Cair" dari Sheet1 pakai XLOOKUP.
+        <span class="jawab">Jawaban: =XLOOKUP("Sabun Cair", Sheet2!A:A, Sheet2!B:B)</span></div>
+        <div class="soal-box"><b>3.</b> Hitung berapa banyak produk yang jumlah terjualnya lebih dari 50 unit (kolom B, baris 2–11).
+        <span class="jawab">Jawaban: =COUNTIF(B2:B11, ">50")</span></div>
+        <div class="soal-box"><b>4.</b> Buat kolom status kelulusan: jika nilai di kolom C ≥ 75 tulis "Lulus", jika tidak tulis "Tidak Lulus".
+        <span class="jawab">Jawaban: =IF(C2>=75, "Lulus", "Tidak Lulus")</span></div>
+        <div class="soal-box"><b>5.</b> Data penjualan harian selama sebulan punya standar deviasi yang besar dibanding rata-ratanya. Apa artinya bagi bisnis?
+        <span class="jawab">Jawaban: artinya penjualan hariannya nggak stabil/fluktuatif tinggi, bukan tersebar merata di sekitar rata-rata — perlu diselidiki penyebabnya (musiman, promo, dsb).</span></div>
+        <div class="sub-h">📝 Latihan Soal</div>
+        <ul class="latihan-list">
+          <li>Buat Pivot Table untuk menghitung total penjualan per kategori produk dari data mentah 50 baris.</li>
+          <li>Gunakan Conditional Formatting untuk menyorot merah semua nilai penjualan di bawah rata-rata.</li>
+          <li>Hitung standar deviasi dan interpretasikan: apakah data penjualanmu tersebar merata atau bervariasi tinggi?</li>
+          <li>Gabungkan IF + AND untuk membuat kolom status "Target Tercapai" jika penjualan > 100 dan margin > 20%.</li>
+        </ul>
+        <div class="resource-line">Sumber belajar: <a href="https://exceljet.net/" target="_blank">Exceljet.net</a> · <a href="https://www.youtube.com/results?search_query=tutorial+pivot+table+bahasa+indonesia" target="_blank">YouTube: Pivot Table Bahasa Indonesia</a> · <a href="https://www.khanacademy.org/math/statistics-probability" target="_blank">Khan Academy Statistics</a></div>
+      </div>
+    </div>
+
+    <div class="phase" data-phase="2">
+      <div class="phase-head" onclick="togglePhase(this)">
+        <div><h3>💗 Fase 2 — SQL: Dari SELECT sampai JOIN</h3><div class="range">Hari 6–13 · 1–8 September</div></div>
+        <div class="chev">⌄</div>
+      </div>
+      <div class="phase-body">
+        <ul class="topic-list">
+          <li>Konsep database, tabel, install & pakai DB Browser for SQLite <span class="badge wajib">WAJIB</span></li>
+          <li>SELECT, WHERE, operator logika (AND/OR/NOT) <span class="badge wajib">WAJIB</span></li>
+          <li>ORDER BY, LIMIT, DISTINCT <span class="badge wajib">WAJIB</span></li>
+          <li>Aggregate function: COUNT, SUM, AVG, MIN, MAX + GROUP BY <span class="badge wajib">WAJIB</span></li>
+          <li>HAVING & subquery dasar <span class="badge wajib">WAJIB</span></li>
+          <li>JOIN: INNER JOIN, LEFT JOIN <span class="badge wajib">WAJIB</span></li>
+          <li>Multiple JOIN & studi kasus gabungan <span class="badge wajib">WAJIB</span></li>
+          <li>Window function (RANK, ROW_NUMBER) & CTE (WITH) <span class="badge opsional">OPSIONAL</span></li>
+        </ul>
+        <div class="sub-h">✏️ Contoh Soal</div>
+        <div class="soal-box"><b>1.</b> Dari tabel <code>orders(order_id, customer_id, amount, order_date)</code>, tampilkan total amount per customer, urutkan dari terbesar.
+        <span class="jawab">Jawaban: SELECT customer_id, SUM(amount) AS total FROM orders GROUP BY customer_id ORDER BY total DESC;</span></div>
+        <div class="soal-box"><b>2.</b> Gabungkan tabel <code>orders</code> dan <code>customers(customer_id, name, city)</code> untuk menampilkan nama pelanggan beserta total belanjanya.
+        <span class="jawab">Jawaban: SELECT c.name, SUM(o.amount) AS total FROM customers c JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.name;</span></div>
+        <div class="soal-box"><b>3.</b> Hitung berapa jumlah pelanggan unik (distinct) dari tiap kota di tabel <code>customers(customer_id, name, city)</code>.
+        <span class="jawab">Jawaban: SELECT city, COUNT(DISTINCT customer_id) AS jumlah_pelanggan FROM customers GROUP BY city;</span></div>
+        <div class="soal-box"><b>4.</b> Tampilkan semua order yang nilainya (amount) di atas rata-rata seluruh order.
+        <span class="jawab">Jawaban: SELECT * FROM orders WHERE amount > (SELECT AVG(amount) FROM orders);</span></div>
+        <div class="soal-box"><b>5.</b> Cari pelanggan yang belum pernah melakukan order sama sekali.
+        <span class="jawab">Jawaban: SELECT c.name FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id WHERE o.order_id IS NULL;</span></div>
+        <div class="sub-h">📝 Latihan Soal</div>
+        <ul class="latihan-list">
+          <li>Tampilkan 5 pelanggan dengan transaksi terbesar sepanjang tahun 2024 (pakai WHERE tanggal + ORDER BY + LIMIT).</li>
+          <li>Cari pelanggan yang belum pernah bertransaksi sama sekali (gunakan LEFT JOIN + WHERE IS NULL).</li>
+          <li>Hitung rata-rata transaksi per kota dengan HAVING rata-rata di atas 500.000.</li>
+          <li>(Opsional) Buat ranking pelanggan teratas per kota menggunakan window function RANK().</li>
+        </ul>
+        <div class="resource-line">Sumber belajar: <a href="https://sqlzoo.net/" target="_blank">SQLZoo</a> · <a href="https://mode.com/sql-tutorial/" target="_blank">Mode SQL Tutorial</a> · <a href="https://www.w3schools.com/sql/" target="_blank">W3Schools SQL</a></div>
+      </div>
+    </div>
+
+    <div class="phase" data-phase="3">
+      <div class="phase-head" onclick="togglePhase(this)">
+        <div><h3>🌸 Fase 3 — Python, Pandas & NumPy</h3><div class="range">Hari 14–22 · 9–17 September</div></div>
+        <div class="chev">⌄</div>
+      </div>
+      <div class="phase-body">
+        <ul class="topic-list">
+          <li>Setup Google Colab, sintaks dasar Python: variabel & tipe data <span class="badge wajib">WAJIB</span></li>
+          <li>Struktur kontrol: if/else, for loop, while loop <span class="badge wajib">WAJIB</span></li>
+          <li>List, dictionary, tuple, dan membuat function <span class="badge wajib">WAJIB</span></li>
+          <li>NumPy dasar: array, operasi vektor, indexing <span class="badge wajib">WAJIB</span></li>
+          <li>Pandas dasar: Series, DataFrame, membaca CSV <span class="badge wajib">WAJIB</span></li>
+          <li>Data cleaning: missing value, duplicate, ubah tipe data <span class="badge wajib">WAJIB</span></li>
+          <li>Data manipulation: filter, sort, groupby, merge <span class="badge wajib">WAJIB</span></li>
+          <li>List comprehension & OOP dasar di Python <span class="badge opsional">OPSIONAL</span></li>
+        </ul>
+        <div class="sub-h">✏️ Contoh Soal</div>
+        <div class="soal-box"><b>1.</b> Kamu punya DataFrame <code>df</code> dengan kolom "harga". Tampilkan baris yang harganya di atas 50000.
+        <span class="jawab">Jawaban: df[df['harga'] > 50000]</span></div>
+        <div class="soal-box"><b>2.</b> Hitung rata-rata "penjualan" per "kategori" pada DataFrame yang sama.
+        <span class="jawab">Jawaban: df.groupby('kategori')['penjualan'].mean()</span></div>
+        <div class="soal-box"><b>3.</b> Kolom "umur" di DataFrame kamu punya beberapa nilai kosong (NaN). Isi nilai kosong itu dengan rata-rata umur.
+        <span class="jawab">Jawaban: df['umur'] = df['umur'].fillna(df['umur'].mean())</span></div>
+        <div class="soal-box"><b>4.</b> Urutkan DataFrame berdasarkan kolom "penjualan" dari yang terbesar ke terkecil.
+        <span class="jawab">Jawaban: df.sort_values('penjualan', ascending=False)</span></div>
+        <div class="soal-box"><b>5.</b> Kamu punya dua DataFrame, <code>df_transaksi</code> dan <code>df_pelanggan</code>, keduanya punya kolom "customer_id". Gabungkan keduanya jadi satu tabel.
+        <span class="jawab">Jawaban: df_gabung = df_transaksi.merge(df_pelanggan, on='customer_id', how='left')</span></div>
+        <div class="sub-h">📝 Latihan Soal</div>
+        <ul class="latihan-list">
+          <li>Baca file CSV berisi data penjualan, cek jumlah missing value tiap kolom dengan <code>df.isnull().sum()</code>.</li>
+          <li>Hapus baris duplikat dan ubah kolom "tanggal" menjadi tipe datetime.</li>
+          <li>Buat kolom baru "total" = harga × jumlah menggunakan operasi antar kolom.</li>
+          <li>Gabungkan (merge) dua DataFrame: data transaksi dan data pelanggan berdasarkan customer_id.</li>
+          <li>Cari 3 kategori produk dengan total penjualan tertinggi menggunakan groupby + sort_values.</li>
+        </ul>
+        <div class="resource-line">Sumber belajar: <a href="https://www.kaggle.com/learn/pandas" target="_blank">Kaggle Learn: Pandas</a> · <a href="https://www.kaggle.com/learn/python" target="_blank">Kaggle Learn: Python</a> · <a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp Data Analysis</a></div>
+      </div>
+    </div>
+
+    <div class="phase" data-phase="4">
+      <div class="phase-head" onclick="togglePhase(this)">
+        <div><h3>🎀 Fase 4 — Visualisasi Data & Statistik Inferensial</h3><div class="range">Hari 23–27 · 18–22 September</div></div>
+        <div class="chev">⌄</div>
+      </div>
+      <div class="phase-body">
+        <ul class="topic-list">
+          <li>Matplotlib dasar: line chart, bar chart <span class="badge wajib">WAJIB</span></li>
+          <li>Seaborn: histogram, boxplot, heatmap korelasi <span class="badge wajib">WAJIB</span></li>
+          <li>Statistik inferensial dasar: hypothesis testing, p-value, korelasi vs kausasi <span class="badge wajib">WAJIB</span></li>
+          <li>Bikin dashboard sederhana di Tableau Public / Looker Studio <span class="badge wajib">WAJIB</span></li>
+          <li>Interactive chart dengan Plotly <span class="badge opsional">OPSIONAL</span></li>
+        </ul>
+        <div class="sub-h">✏️ Contoh Soal</div>
+        <div class="soal-box"><b>1.</b> Buat bar chart untuk menampilkan 5 kategori produk dengan penjualan tertinggi memakai Matplotlib.
+        <span class="jawab">Jawaban: plt.bar(top5['kategori'], top5['penjualan']); plt.xticks(rotation=45); plt.show()</span></div>
+        <div class="soal-box"><b>2.</b> Kamu melihat boxplot penjualan dan ada titik-titik jauh di luar "kotak". Apa artinya?
+        <span class="jawab">Jawaban: titik-titik itu adalah outlier — nilai yang jauh berbeda dari mayoritas data, perlu dicek apakah itu anomali atau data valid.</span></div>
+        <div class="soal-box"><b>3.</b> Histogram harga produk kamu miring ke kanan (ekor panjang di sisi kanan). Apa istilah statistiknya dan apa artinya?
+        <span class="jawab">Jawaban: disebut right-skewed (skew positif) — artinya sebagian besar produk berharga rendah, tapi ada sedikit produk dengan harga sangat tinggi yang menarik "ekor" distribusi ke kanan.</span></div>
+        <div class="soal-box"><b>4.</b> Heatmap korelasi menunjukkan angka 0.85 antara "jam_iklan" dan "penjualan". Apa maknanya?
+        <span class="jawab">Jawaban: ada korelasi positif yang kuat — makin banyak jam iklan, penjualan cenderung makin tinggi. Tapi ini belum tentu hubungan sebab-akibat (korelasi ≠ kausasi), perlu analisis lanjutan.</span></div>
+        <div class="soal-box"><b>5.</b> Hasil uji hipotesis menunjukkan p-value = 0.03 dengan ambang signifikansi 0.05. Apa kesimpulannya?
+        <span class="jawab">Jawaban: karena p-value (0.03) lebih kecil dari 0.05, hasilnya signifikan secara statistik — cukup bukti untuk menolak hipotesis nol.</span></div>
+        <div class="sub-h">📝 Latihan Soal</div>
+        <ul class="latihan-list">
+          <li>Buat heatmap korelasi antar variabel numerik dalam dataset penjualan, interpretasikan korelasi terkuatnya.</li>
+          <li>Buat histogram distribusi harga produk, apakah polanya normal, skew kiri, atau skew kanan?</li>
+          <li>Import data ke Tableau Public, buat 1 dashboard berisi minimal 2 chart yang saling berkaitan.</li>
+        </ul>
+        <div class="resource-line">Sumber belajar: <a href="https://seaborn.pydata.org/tutorial.html" target="_blank">Seaborn Tutorial</a> · <a href="https://www.kaggle.com/learn/data-visualization" target="_blank">Kaggle Learn: Data Visualization</a> · <a href="https://www.youtube.com/results?search_query=statquest+hypothesis+testing" target="_blank">YouTube: StatQuest</a></div>
+      </div>
+    </div>
+
+    <div class="phase" data-phase="5">
+      <div class="phase-head" onclick="togglePhase(this)">
+        <div><h3>💖 Fase 5 — Portfolio Project End-to-End</h3><div class="range">Hari 28–32 · 23–27 September</div></div>
+        <div class="chev">⌄</div>
+      </div>
+      <div class="phase-body">
+        <ul class="topic-list">
+          <li>Konsep data storytelling: cara menyampaikan insight ke audiens non-teknis <span class="badge wajib">WAJIB</span></li>
+          <li>Pilih dataset (Kaggle) & tentukan pertanyaan bisnis <span class="badge wajib">WAJIB</span></li>
+          <li>Eksekusi project: cleaning → analisis → visualisasi → dashboard <span class="badge wajib">WAJIB</span></li>
+          <li>Susun project ke GitHub/LinkedIn sebagai portfolio <span class="badge opsional">OPSIONAL</span></li>
+        </ul>
+        <div class="sub-h">✏️ Contoh Soal / Skenario</div>
+        <div class="soal-box"><b>1.</b> Kamu dapat dataset penjualan e-commerce. Pertanyaan bisnisnya: "Kategori produk apa yang paling menguntungkan tiap musim?" Bagaimana alur pengerjaannya?
+        <span class="jawab">Jawaban: (1) Ambil dataset dari Kaggle → (2) Bersihkan data dengan Pandas → (3) Eksplorasi & agregasi per kategori/musim → (4) Visualisasikan dengan Seaborn/Tableau → (5) Tulis 3–5 insight kunci dalam bahasa awam.</span></div>
+        <div class="soal-box"><b>2.</b> Stakeholder awam bertanya "jadi apa maksud grafiknya?" ke chart korelasi yang kamu buat. Bagaimana cara menjelaskannya dengan baik?
+        <span class="jawab">Jawaban: hindari istilah teknis, fokus ke insight dan dampaknya — misalnya "kalau kita naikkan budget iklan, penjualan cenderung ikut naik", bukan "koefisien korelasinya 0.85".</span></div>
+        <div class="soal-box"><b>3.</b> Dataset kamu punya 40% data yang hilang di kolom penting. Apa langkah yang perlu diambil sebelum lanjut analisis?
+        <span class="jawab">Jawaban: telusuri dulu penyebab data hilang, lalu putuskan apakah diisi (imputasi), dihapus, atau dicari sumber data pengganti — jangan langsung dihapus tanpa dicek dampaknya ke hasil analisis.</span></div>
+        <div class="soal-box"><b>4.</b> Kamu ingin memilih dataset portfolio yang relevan dengan background Teknik Fisika kamu. Contoh topik apa yang cocok?
+        <span class="jawab">Jawaban: dataset konsumsi energi, efisiensi manufaktur, sensor IoT, atau data eksperimen — topik yang menunjukkan kamu bisa menjembatani ilmu sains/teknik dengan analisis data.</span></div>
+        <div class="soal-box"><b>5.</b> Project kamu sudah selesai. Bagaimana cara menyusunnya supaya menarik di mata recruiter?
+        <span class="jawab">Jawaban: buat README yang jelas (latar belakang, pertanyaan bisnis, proses, insight, kesimpulan), sertakan visualisasi/dashboard, dan unggah ke GitHub atau tulis ringkasannya di LinkedIn.</span></div>
+        <div class="sub-h">📝 Latihan Soal</div>
+        <ul class="latihan-list">
+          <li>Cari dataset di Kaggle sesuai minatmu (misal energi, kesehatan, atau retail — cocok dengan background Teknik Fisika kamu!).</li>
+          <li>Tulis 3 pertanyaan bisnis yang ingin kamu jawab dari dataset itu.</li>
+          <li>Buat 1 dashboard ringkas + 1 halaman ringkasan insight (bisa di Notion, PDF, atau README GitHub).</li>
+        </ul>
+        <div class="resource-line">Sumber belajar: <a href="https://www.kaggle.com/datasets" target="_blank">Kaggle Datasets</a> · <a href="https://www.freecodecamp.org/news/tag/data-storytelling/" target="_blank">Data Storytelling Guide</a></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===================== TRACKER ===================== -->
+  <section class="panel" id="panel-tracker">
+    <div class="card">
+      <h2><span class="em">✅</span>Progress Tracker Harian</h2>
+      <div class="progress-wrap">
+        <div class="progress-bar-outer">
+          <div class="progress-bar-inner" id="progress-bar" style="width:0%;"><span id="progress-text">0%</span></div>
+        </div>
+        <div class="progress-label" id="progress-summary">Memuat progress kamu...</div>
+        <div class="progress-label" style="margin-top:2px;">Estimasi total waktu belajar: ±60 jam untuk 32 hari (rata-rata ±1,9 jam/hari)</div>
+        <div class="progress-label" id="save-status" style="margin-top:6px; font-weight:600; min-height:16px;"></div>
+      </div>
+      <div id="tracker-loading" class="loading-msg">Memuat checklist...</div>
+      <table class="tracker" id="tracker-table" style="display:none;">
+        <thead><tr><th style="width:30px;"></th><th style="width:60px;">Hari</th><th>Materi & Capaian</th><th style="width:66px;">Durasi</th><th style="width:56px;">Target</th></tr></thead>
+        <tbody id="tracker-body"></tbody>
+      </table>
+      <button class="reset-btn" id="reset-btn">↺ Reset semua checklist</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="flourish">✦ ❦ ✦</div>
+    <span class="bow">🎀</span><br>
+    Semangat terus, Lula! Satu hari, satu materi, satu langkah lebih dekat ke karir impianmu.
+  </footer>
+
+</div>
+
+<script>
+const days = [
+  {d:1,date:'27 Agu',phase:1,topic:'Kenalan role Data Analyst & tools overview',durasi:'1 jam',capaian:'Paham peran data analyst & alur kerja tools yang dipakai sehari-hari'},
+  {d:2,date:'28 Agu',phase:1,topic:'Excel/Sheets: SUM, AVERAGE, COUNT, IF',durasi:'1,5 jam',capaian:'Bisa pakai formula dasar untuk mengolah data sederhana'},
+  {d:3,date:'29 Agu',phase:1,topic:'VLOOKUP / XLOOKUP & INDEX-MATCH',durasi:'2 jam',capaian:'Bisa mencari & mencocokkan data antar tabel'},
+  {d:4,date:'30 Agu',phase:1,topic:'Pivot Table & Conditional Formatting',durasi:'2 jam',capaian:'Bisa meringkas data besar jadi ringkasan yang actionable'},
+  {d:5,date:'31 Agu',phase:1,topic:'Statistika dasar: mean, median, modus, std dev',durasi:'1,5 jam',capaian:'Paham ukuran pemusatan & sebaran data — Fase 1 selesai'},
+  {d:6,date:'1 Sep',phase:2,topic:'Install DB Browser, intro SQL: SELECT & WHERE',durasi:'1,5 jam',capaian:'Bisa ambil & filter data dari sebuah tabel'},
+  {d:7,date:'2 Sep',phase:2,topic:'ORDER BY, LIMIT, DISTINCT, operator logika',durasi:'1 jam',capaian:'Bisa urutkan & batasi hasil query'},
+  {d:8,date:'3 Sep',phase:2,topic:'Aggregate function & GROUP BY',durasi:'2 jam',capaian:'Bisa hitung ringkasan (total/rata-rata) per kelompok data'},
+  {d:9,date:'4 Sep',phase:2,topic:'HAVING & subquery dasar',durasi:'2 jam',capaian:'Bisa filter hasil agregasi & query bersarang'},
+  {d:10,date:'5 Sep',phase:2,topic:'JOIN: INNER JOIN & LEFT JOIN',durasi:'2 jam',capaian:'Bisa gabungkan 2 tabel jadi satu hasil'},
+  {d:11,date:'6 Sep',phase:2,topic:'Multiple JOIN & studi kasus',durasi:'2 jam',capaian:'Bisa gabungkan lebih dari 2 tabel sekaligus'},
+  {d:12,date:'7 Sep',phase:2,topic:'Window function & CTE (opsional)',durasi:'1,5 jam',capaian:'Kenal fungsi SQL tingkat lanjut'},
+  {d:13,date:'8 Sep',phase:2,topic:'Review & latihan gabungan SQL',durasi:'2,5 jam',capaian:'SQL dasar-menengah dikuasai — Fase 2 selesai'},
+  {d:14,date:'9 Sep',phase:3,topic:'Setup Colab, Python dasar: variabel & tipe data',durasi:'1,5 jam',capaian:'Bisa tulis & jalankan kode Python sederhana'},
+  {d:15,date:'10 Sep',phase:3,topic:'Struktur kontrol: if/else, loop',durasi:'1,5 jam',capaian:'Bisa buat logika percabangan & perulangan'},
+  {d:16,date:'11 Sep',phase:3,topic:'List, dictionary, tuple, function',durasi:'2 jam',capaian:'Bisa simpan & olah kumpulan data dengan struktur yang tepat'},
+  {d:17,date:'12 Sep',phase:3,topic:'Intro NumPy: array & operasi dasar',durasi:'1,5 jam',capaian:'Bisa operasi numerik cepat pakai array'},
+  {d:18,date:'13 Sep',phase:3,topic:'Intro Pandas: Series, DataFrame, baca CSV',durasi:'2 jam',capaian:'Bisa buka & tampilkan dataset dengan Pandas'},
+  {d:19,date:'14 Sep',phase:3,topic:'Data cleaning: missing value, duplicate, tipe data',durasi:'2 jam',capaian:'Bisa bersihkan data kotor jadi siap dianalisis'},
+  {d:20,date:'15 Sep',phase:3,topic:'Data manipulation: filter, sort, groupby, merge',durasi:'2 jam',capaian:'Bisa olah & gabungkan data sesuai kebutuhan analisis'},
+  {d:21,date:'16 Sep',phase:3,topic:'Studi kasus cleaning + manipulation gabungan',durasi:'2,5 jam',capaian:'Bisa kerjakan alur cleaning-ke-analisis secara mandiri'},
+  {d:22,date:'17 Sep',phase:3,topic:'Review & latihan Python/Pandas',durasi:'2 jam',capaian:'Python & Pandas dasar dikuasai — Fase 3 selesai'},
+  {d:23,date:'18 Sep',phase:4,topic:'Matplotlib dasar: line chart, bar chart',durasi:'1,5 jam',capaian:'Bisa bikin chart dasar untuk lihat tren & perbandingan'},
+  {d:24,date:'19 Sep',phase:4,topic:'Seaborn: histogram, boxplot, heatmap',durasi:'2 jam',capaian:'Bisa visualisasikan distribusi & korelasi data'},
+  {d:25,date:'20 Sep',phase:4,topic:'Statistik inferensial: hypothesis testing, p-value',durasi:'2 jam',capaian:'Paham cara menilai signifikansi suatu temuan data'},
+  {d:26,date:'21 Sep',phase:4,topic:'Install Tableau Public, kenalan dashboard',durasi:'1 jam',capaian:'Familiar dengan tools dashboard interaktif'},
+  {d:27,date:'22 Sep',phase:4,topic:'Bikin dashboard sederhana',durasi:'2,5 jam',capaian:'Punya 1 dashboard visual pertama — Fase 4 selesai'},
+  {d:28,date:'23 Sep',phase:5,topic:'Data storytelling: menyampaikan insight',durasi:'1,5 jam',capaian:'Bisa susun insight jadi cerita yang mudah dipahami'},
+  {d:29,date:'24 Sep',phase:5,topic:'Pilih dataset Kaggle + rencana project',durasi:'1,5 jam',capaian:'Punya dataset & pertanyaan bisnis yang jelas'},
+  {d:30,date:'25 Sep',phase:5,topic:'Kerjakan project: cleaning & analisis',durasi:'3 jam',capaian:'Data project sudah bersih & teranalisis'},
+  {d:31,date:'26 Sep',phase:5,topic:'Kerjakan project: visualisasi & dashboard',durasi:'3 jam',capaian:'Project punya visualisasi/dashboard yang siap ditampilkan'},
+  {d:32,date:'27 Sep',phase:5,topic:'Finalisasi project, susun ke GitHub/LinkedIn, review',durasi:'2,5 jam',capaian:'Portfolio siap dipamerkan — target 27 September tercapai!'}
+];
+
+const phaseColors = {
+  1:{bg:'#FBD9E4',fg:'#C43E6B'},
+  2:{bg:'#F5C8DC',fg:'#9E2D5A'},
+  3:{bg:'#F3D8C4',fg:'#8A5A24'},
+  4:{bg:'#E4D4F0',fg:'#6A3D8C'},
+  5:{bg:'#D4E8DC',fg:'#2E6B48'}
+};
+const phaseNames = {1:'Fondasi',2:'SQL',3:'Python',4:'Visual',5:'Project'};
+
+let checkedState = {};
+
+function togglePhase(headEl){
+  headEl.parentElement.classList.toggle('open');
+}
+
+function switchTab(tabName){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active', b.dataset.tab===tabName));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active', p.id==='panel-'+tabName));
+}
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>switchTab(btn.dataset.tab));
+});
+
+function renderTracker(){
+  const tbody = document.getElementById('tracker-body');
+  tbody.innerHTML = '';
+  days.forEach(dayObj=>{
+    const tr = document.createElement('tr');
+    tr.id = 'row-'+dayObj.d;
+    const isChecked = !!checkedState[dayObj.d];
+    if(isChecked) tr.classList.add('done');
+    const pc = phaseColors[dayObj.phase];
+    const targetPct = Math.round((dayObj.d/days.length)*100);
+    tr.innerHTML = `
+      <td><input type="checkbox" class="checkbox-heart" data-day="${dayObj.d}" ${isChecked?'checked':''}></td>
+      <td>${dayObj.d}<br><span style="font-size:.72rem;color:var(--plum-soft);">${dayObj.date}</span></td>
+      <td class="topic-cell"><b>${dayObj.topic}</b><br><span style="font-size:.78rem;color:var(--plum-soft);">${dayObj.capaian}</span><br><span class="phase-tagcell" style="background:${pc.bg};color:${pc.fg};margin-top:4px;">${phaseNames[dayObj.phase]}</span></td>
+      <td>${dayObj.durasi}</td>
+      <td>${targetPct}%</td>
+    `;
+    tbody.appendChild(tr);
+  });
+  document.querySelectorAll('.checkbox-heart').forEach(cb=>{
+    cb.addEventListener('change', onCheck);
+  });
+  updateProgress();
+}
+
+function updateProgress(){
+  const total = days.length;
+  const done = Object.values(checkedState).filter(Boolean).length;
+  const pct = Math.round((done/total)*100);
+  document.getElementById('progress-bar').style.width = pct+'%';
+  document.getElementById('progress-text').textContent = pct+'%';
+  document.getElementById('mini-percent').textContent = pct+'%';
+  document.getElementById('progress-summary').textContent = `${done} dari ${total} hari selesai (${pct}%)`;
+}
+
+async function saveWithRetry(value, attempts){
+  for(let i=0;i<attempts;i++){
+    try{
+      const result = await window.storage.set('lula-checklist', value, false);
+      if(result) return true;
+    }catch(err){
+      console.error('Percobaan simpan ke-'+(i+1)+' gagal', err);
+    }
+    if(i < attempts-1){
+      await new Promise(res=>setTimeout(res, 600*(i+1)));
+    }
+  }
+  return false;
+}
+
+async function onCheck(e){
+  const day = e.target.dataset.day;
+  checkedState[day] = e.target.checked;
+  const row = document.getElementById('row-'+day);
+  row.classList.toggle('done', e.target.checked);
+  updateProgress();
+  const statusEl = document.getElementById('save-status');
+  statusEl.textContent = 'Menyimpan...';
+  statusEl.style.color = 'var(--plum-soft)';
+  const ok = await saveWithRetry(JSON.stringify(checkedState), 3);
+  if(ok){
+    statusEl.textContent = 'Tersimpan ✓';
+    statusEl.style.color = 'var(--pink-deep)';
+  }else{
+    statusEl.textContent = 'Belum tersimpan ke server, tapi progress tetap kelihatan di layar ini. Coba centang ulang kalau kamu reload halaman.';
+    statusEl.style.color = '#A32D2D';
+  }
+}
+
+async function loadChecklist(){
+  try{
+    const result = await window.storage.get('lula-checklist', false);
+    if(result && result.value){
+      checkedState = JSON.parse(result.value);
+    }
+  }catch(err){
+    checkedState = {};
+  }
+  document.getElementById('tracker-loading').style.display = 'none';
+  document.getElementById('tracker-table').style.display = 'table';
+  renderTracker();
+}
+
+document.getElementById('reset-btn').addEventListener('click', async ()=>{
+  checkedState = {};
+  const statusEl = document.getElementById('save-status');
+  statusEl.textContent = 'Mereset...';
+  statusEl.style.color = 'var(--plum-soft)';
+  const ok = await saveWithRetry(JSON.stringify(checkedState), 3);
+  statusEl.textContent = ok ? 'Semua checklist direset ✓' : 'Reset di layar berhasil, tapi belum tersimpan ke server. Coba lagi sebentar lagi.';
+  statusEl.style.color = ok ? 'var(--pink-deep)' : '#A32D2D';
+  renderTracker();
+});
+
+loadChecklist();
+</script>
+</body>
+</html>
